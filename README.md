@@ -170,6 +170,16 @@ Static-only hosts (GitHub Pages, Netlify, Vercel) can serve `frontend/dist`, but
 (`/api/predict`, `/api/listings`, `/api/compare`) will be unavailable there — the UI then renders its
 bundled `analysis_results.json` snapshot, so it degrades gracefully rather than breaking.
 
+**One-click deploy on Render (recommended):** the repository root contains a `render.yaml` Blueprint with the
+commands above already configured. In the Render Dashboard choose **New +** → **Blueprint** → select this
+repository → **Apply**. Render builds the React bundle, installs the Python dependencies, starts
+`gunicorn server:app`, and health-checks `/api/health`.
+
+> **Memory note:** the free tier provides 512 MB RAM, and the resident set (pandas + scikit-learn +
+> the 65 MB Random Forest) sits near that ceiling. `render.yaml` therefore pins Gunicorn to a single worker
+> with threads. If the service is restarted for exceeding memory, move it to a larger plan rather than
+> adding workers.
+
 > **Runtime independence:** the website does **not** execute the Jupyter notebook. The notebook in
 > `notebooks/` is an independent, fully executed academic deliverable. The site's figures come from
 > `backend/build_complete_analytics.py`, which writes `backend/analysis_results.json` (served by the API),
