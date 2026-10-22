@@ -79,6 +79,11 @@ FODS_Final_Submission/
 │           ├── MarketExplorer.jsx     <- Side-by-side comparative analytics tool
 │           ├── TableauDashboard.jsx   <- Live Tableau Public workbook embed
 │           └── AboutStudy.jsx         <- Academic data dictionary & study provenance
+├── streamlit_app/                     <- Free-host deployment target (Streamlit port of the platform)
+│   ├── app.py                         <- Complete Streamlit application (all 8 sections)
+│   └── requirements.txt               <- Streamlit-only dependency set (takes precedence on Cloud)
+├── .streamlit/
+│   └── config.toml                    <- Streamlit theme (coral accent, warm canvas)
 ├── reports/
 │   ├── FODS_Final_Case_Study_Report.docx       <- Official case study report with figures
 │   ├── FODS_Final_Case_Study_Presentation.pptx <- 12-slide presentation (16:9 widescreen)
@@ -185,6 +190,32 @@ repository → **Apply**. Render builds the React bundle, installs the Python de
 > `backend/build_complete_analytics.py`, which writes `backend/analysis_results.json` (served by the API),
 > a mirrored copy bundled into `frontend/src/data/` (offline fallback), and
 > `backend/trained_model_pipeline.pkl` (used by `/api/predict`).
+
+### 5.8 Streamlit Deployment (Free Hosting)
+`streamlit_app/app.py` is a complete Streamlit port of the platform — all eight sections
+(Overview, Explore Market, Research Questions, Statistical Evidence, Price Prediction,
+Market Explorer, Tableau Dashboard, About) driven by the **same** `analysis_results.json`,
+`cleaned_airbnb.csv` and `trained_model_pipeline.pkl` the Flask API serves. No statistic is
+recomputed, so every figure matches the report and the notebook exactly.
+
+```bash
+pip install -r streamlit_app/requirements.txt
+streamlit run streamlit_app/app.py        # -> http://localhost:8501
+```
+
+**Deploy free on Streamlit Community Cloud**
+
+1. Push this repository to GitHub.
+2. Go to <https://share.streamlit.io> → **New app** → *Deploy a public app from GitHub*.
+3. Select this repository, branch `main`, and set **Main file path** to `streamlit_app/app.py`.
+4. Under *Advanced settings* pick Python **3.13** (the interpreter that produced the model pickle).
+5. **Deploy.** The first build installs `streamlit_app/requirements.txt` (Streamlit prefers the
+   requirements file next to the entrypoint), which is why the heavy authoring stack
+   (matplotlib, seaborn, statsmodels, nbconvert, python-docx, python-pptx) is not installed.
+
+> **Model pinning.** `streamlit_app/requirements.txt` pins `scikit-learn==1.9.0` exactly, because
+> `backend/trained_model_pipeline.pkl` was produced with that version and scikit-learn pickles are
+> not guaranteed to load across releases.
 
 ---
 

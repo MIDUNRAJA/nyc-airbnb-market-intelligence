@@ -1,0 +1,17 @@
+# Deployment dependencies for the Streamlit port (streamlit_app/app.py).
+#
+# Streamlit Community Cloud prefers a requirements.txt that sits next to the
+# app entrypoint, so this file - not the repository-root requirements.txt -
+# governs the Streamlit build. The heavy offline authoring stack (matplotlib,
+# seaborn, statsmodels, nbconvert, python-docx, python-pptx) is deliberately
+# excluded: nothing in this app imports it.
+#
+# scikit-learn is pinned because backend/trained_model_pipeline.pkl was
+# produced with that exact version and scikit-learn pickles are not guaranteed
+# across releases. Everything else only needs a compatible floor.
+streamlit>=1.66.0
+pandas>=2.2.0
+numpy>=2.0.0
+scikit-learn==1.9.0
+joblib>=1.4.0
+plotly>=5.22.0
