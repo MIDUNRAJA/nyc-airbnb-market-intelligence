@@ -1,0 +1,25 @@
+# Files excluded from the Docker build context.
+# These are large and unused at runtime: the API is pure JSON and every chart is
+# rendered client-side, so no figures, notebooks or reports are served.
+.git
+.gitignore
+node_modules
+**/__pycache__
+*.py[cod]
+.venv
+venv
+.ipynb_checkpoints
+.DS_Store
+
+# Authoring-only material
+notebooks/
+reports/
+outputs/
+figures/
+data/raw/
+*.ipynb
+*.docx
+*.pptx
+
+# Other deploy targets
+render.yaml
