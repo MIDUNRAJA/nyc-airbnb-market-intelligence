@@ -1,0 +1,276 @@
+{
+  "n_raw": 48895,
+  "n_clean": 48870,
+  "price_cap": 799.0,
+  "skew_raw": 19.11748210270245,
+  "skew_capped": 2.7769757550276903,
+  "skew_log": 0.366684672898497,
+  "kurt_raw": 585.5185365301236,
+  "kurt_log": 0.010160213518251027,
+  "mean_price": 152.75940249641909,
+  "median_price": 106.0,
+  "eta2_borough": 0.13631060205168236,
+  "F_borough": 1928.0130059133917,
+  "welch_F_borough": 1973.2670955508563,
+  "H_borough": 7022.316132979581,
+  "median_by_borough": {
+    "Manhattan": 150.0,
+    "Brooklyn": 90.0,
+    "Queens": 75.0,
+    "Bronx": 65.0,
+    "Staten Island": 75.0
+  },
+  "t_room": 175.87782300630442,
+  "d_room": 1.6066896117464295,
+  "med_entire": 160.0,
+  "med_private": 70.0,
+  "room_premium": 1.2857142857142856,
+  "room_ratio_ci": [
+    2.273728790291926,
+    2.3162174509073856
+  ],
+  "chi2_borough_room": 1557.9524945804317,
+  "V_borough_room": 0.12625277661595202,
+  "dof_chi": 8,
+  "manhattan_entire_pct": 60.92638773436778,
+  "brooklyn_private_pct": 50.38578326447309,
+  "top_neighbourhood": "Tribeca",
+  "top_neighbourhood_median": 295.0,
+  "H_neigh": 14256.03552094674,
+  "eps2_neigh": 0.2974469103853017,
+  "n_valid_neigh": 123,
+  "top10_neigh": {
+    "Tribeca": 295.0,
+    "NoHo": 250.0,
+    "Flatiron District": 225.0,
+    "Midtown": 210.0,
+    "West Village": 200.0,
+    "Financial District": 200.0,
+    "Chelsea": 199.0,
+    "SoHo": 199.0,
+    "Greenwich Village": 198.5,
+    "Battery Park City": 195.0
+  },
+  "rho_avail": 0.08616693845473662,
+  "r_avail_log": 0.09778787172335845,
+  "p_avail": 3.458877026612719e-81,
+  "coef_avail_controlled": 0.0006057538860058001,
+  "p_avail_controlled": 3.85207688497607e-256,
+  "r_reviews": 0.5497489564212239,
+  "rho_reviews": 0.7061052354256031,
+  "r_reviews_all": 0.5892827257470825,
+  "n_reviewed": 38827,
+  "long_stay_share": 0.09189686924493555,
+  "long_stay_n": 4491,
+  "long_entire": 0.12386802110402394,
+  "long_private": 0.05561281649114945,
+  "z_longstay": 25.74507877830715,
+  "h_longstay": 0.24317262091205283,
+  "d_longprice": 0.06596546389706136,
+  "t_longprice": 3.5781910818475176,
+  "multi_share": 0.3393083691426233,
+  "single_share": 0.6606916308573767,
+  "commercial_share": 0.09801514221403725,
+  "gini_hosts": 0.21678744387868565,
+  "top1_share": 0.10114589727849396,
+  "n_hosts": 37442,
+  "H_hosttype": 1315.2013039776568,
+  "eps2_hosttype": 0.02691279346779465,
+  "frobenius": 3.0802905979015902e-15,
+  "pc1_var": 0.2834684173514175,
+  "pc2_var": 0.2381984966151478,
+  "cond_number": 4.186767368284955,
+  "n_features_matrix": 6,
+  "mu_log": 4.732720711903059,
+  "sigma_log": 0.6724465929657724,
+  "p100_theory": 0.4305853649869015,
+  "p100_emp": 0.48927767546552076,
+  "ks_D": 0.05869231047861928,
+  "band_theory": 0.37134033815562495,
+  "band_emp": 0.3392060568856149,
+  "pop_mean": 143.99046449764683,
+  "pop_std": 121.93566616107697,
+  "clt_skew": {
+    "5": 1.158,
+    "15": 0.891,
+    "30": 0.539,
+    "100": 0.242
+  },
+  "clt_se_emp100": 12.311,
+  "clt_se_theory100": 12.194,
+  "clt_cov": {
+    "5": 0.869,
+    "15": 0.894,
+    "30": 0.892,
+    "100": 0.931
+  },
+  "rho_dist": -0.457041194816353,
+  "median_0_2km": 185.0,
+  "median_far": 75.0,
+  "H_cohort": 271.91205094035035,
+  "eps2_cohort": 0.00556410098304345,
+  "dormant_share": 0.35870677307141396,
+  "cohort_median": {
+    "Dormant (0 d)": 100.0,
+    "Part-time (1-299 d)": 110.0,
+    "Year-round (300+ d)": 117.0
+  },
+  "rho_reviews_price": -0.05484679248866634,
+  "coef_reviews_controlled": -0.020982417438889643,
+  "H_reviews": 249.89138935869698,
+  "review_group_median": {
+    "None (0)": 120.0,
+    "Low (1-5)": 101.0,
+    "Medium (6-25)": 106.5,
+    "High (26+)": 100.0
+  },
+  "p_reviews_controlled": 2.2268049479957878e-51,
+  "ci_width_raw": 4.201785348884812,
+  "ci_width_cap": 2.18617096378145,
+  "d_raw": 0.52,
+  "d_cap": 1.035,
+  "d_log": 1.607,
+  "cap_n": 474,
+  "n_tests": 14,
+  "n_rejected_holm": 14,
+  "vif_max_candidate": 4.17,
+  "vif_max_final": 1.88,
+  "bp_lm": 789.7608730614918,
+  "bp_p": 2.595805872925463e-161,
+  "dw": 1.9998151709472591,
+  "jb_p": 0.0,
+  "resid_skew": 0.8361098885547666,
+  "resid_kurt": 5.633324700172171,
+  "train_r2": 0.536026142317747,
+  "train_adj_r2": 0.5358836843106292,
+  "n_influential": 1999,
+  "metrics": {
+    "Baseline: predict the global mean": {
+      "R\u00b2 (log)": -0.0,
+      "RMSE (log)": 0.672,
+      "MAE ($)": 75.23,
+      "Median AE ($)": 47.66
+    },
+    "Baseline: predict the room-type mean": {
+      "R\u00b2 (log)": 0.404,
+      "RMSE (log)": 0.518,
+      "MAE ($)": 59.45,
+      "Median AE ($)": 30.33
+    },
+    "Multiple Linear Regression (OLS)": {
+      "R\u00b2 (log)": 0.538,
+      "RMSE (log)": 0.456,
+      "MAE ($)": 53.01,
+      "Median AE ($)": 27.98
+    },
+    "Ridge (alpha = 10)": {
+      "R\u00b2 (log)": 0.538,
+      "RMSE (log)": 0.456,
+      "MAE ($)": 53.01,
+      "Median AE ($)": 27.98
+    },
+    "Random Forest": {
+      "R\u00b2 (log)": 0.633,
+      "RMSE (log)": 0.407,
+      "MAE ($)": 47.48,
+      "Median AE ($)": 23.74
+    },
+    "Gradient Boosting": {
+      "R\u00b2 (log)": 0.631,
+      "RMSE (log)": 0.408,
+      "MAE ($)": 48.19,
+      "Median AE ($)": 24.31
+    }
+  },
+  "cv_ols": [
+    0.5357897252610583,
+    0.004261463660436953
+  ],
+  "cv_rf": [
+    0.6203273299503587,
+    0.002926092164029834
+  ],
+  "cv_gb": [
+    0.6190278885481449,
+    0.001651138361961078
+  ],
+  "std_beta": {
+    "room_private": -0.5743,
+    "room_shared": -0.267,
+    "boro_brooklyn": -0.1048,
+    "boro_queens": -0.1166,
+    "boro_bronx": -0.0585,
+    "boro_staten_island": -0.0091,
+    "dist_center_km": -0.2377,
+    "log_min_nights": -0.145,
+    "log_reviews": -0.0912,
+    "reviews_per_month": -0.0108,
+    "log_host_listings": -0.0123,
+    "availability_365": 0.1804
+  },
+  "perm_importance": {
+    "room_private": 0.5907,
+    "dist_center_km": 0.1784,
+    "longitude": 0.1283,
+    "availability_365": 0.1043,
+    "room_shared": 0.103,
+    "log_min_nights": 0.0615
+  },
+  "what_if": {
+    "Manhattan \u00b7 Entire home, Midtown": {
+      "OLS predicted ($)": 242.0,
+      "95% PI low ($)": 98.0,
+      "95% PI high ($)": 595.0,
+      "Random Forest ($)": 328.0
+    },
+    "Manhattan \u00b7 Private room": {
+      "OLS predicted ($)": 119.0,
+      "95% PI low ($)": 48.0,
+      "95% PI high ($)": 294.0,
+      "Random Forest ($)": 161.0
+    },
+    "Brooklyn \u00b7 Entire home": {
+      "OLS predicted ($)": 150.0,
+      "95% PI low ($)": 60.0,
+      "95% PI high ($)": 370.0,
+      "Random Forest ($)": 189.0
+    },
+    "Brooklyn \u00b7 Private room": {
+      "OLS predicted ($)": 71.0,
+      "95% PI low ($)": 28.0,
+      "95% PI high ($)": 175.0,
+      "Random Forest ($)": 77.0
+    },
+    "Queens \u00b7 Private room": {
+      "OLS predicted ($)": 45.0,
+      "95% PI low ($)": 18.0,
+      "95% PI high ($)": 112.0,
+      "Random Forest ($)": 57.0
+    },
+    "Bronx \u00b7 Shared room": {
+      "OLS predicted ($)": 30.0,
+      "95% PI low ($)": 11.0,
+      "95% PI high ($)": 74.0,
+      "Random Forest ($)": 40.0
+    },
+    "Manhattan \u00b7 Entire home, commercial host (10 listings)": {
+      "OLS predicted ($)": 208.0,
+      "95% PI low ($)": 84.0,
+      "95% PI high ($)": 512.0,
+      "Random Forest ($)": 188.0
+    }
+  },
+  "pi_width_manhattan_entire": 6.071428571428571,
+  "kpis": {
+    "Total Listings Analysed": "48,870",
+    "Unique Hosts": "37,442",
+    "Median Nightly Price": "$106",
+    "Manhattan vs Bronx Median Price": "$150 vs $65",
+    "Entire-Home Premium over Private Room": "129% (Cohen's d = 1.61)",
+    "Listings Requiring 30+ Nights": "9.2%",
+    "Listings Owned by Multi-Listing Hosts": "33.9%",
+    "Linear Model Test R\u00b2 (log price)": "0.54",
+    "Linear Model Test MAE": "$53.0",
+    "Best Benchmark (Gradient Boosting) MAE": "$48.2"
+  }
+}

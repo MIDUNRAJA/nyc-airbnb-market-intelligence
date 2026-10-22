@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+
+# Environment / secrets
+.env
+.env.local
+
+# OS
+.DS_Store
+
+# NOTE: frontend/dist IS intentionally tracked, so the site can be served with
+# `python server.py` immediately after cloning, without a Node.js toolchain.

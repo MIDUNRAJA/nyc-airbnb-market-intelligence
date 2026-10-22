@@ -1,0 +1,15 @@
+Question,Test,Statistic,p-value,Holm-adj. p,Effect size,Effect value,Magnitude,Decision (Holm)
+Q2,Welch ANOVA,1973.267,< 1e-300,< 1e-300,eta-squared,0.136,medium,Reject H0
+Q3,A/B Test: Welch t-test,175.878,< 1e-300,< 1e-300,Cohen's d,1.607,large,Reject H0
+Q4,Chi-square independence (dof = 8),1557.952,< 1e-300,< 1e-300,Cramer's V,0.126,small,Reject H0
+Q5,Kruskal-Wallis (123 groups),14256.036,< 1e-300,< 1e-300,epsilon-squared,0.297,large,Reject H0
+Q6,Spearman rank correlation,0.086,3.46e-81,1.38e-80,rho^2 (shared rank variance),0.007,negligible,Reject H0
+Q7,"Spearman (reviewed listings, n = 38,827)",0.706,< 1e-300,< 1e-300,rho^2,0.499,large,Reject H0
+Q8a,Two-proportion z-test,25.745,3.66e-146,1.83e-145,Cohen's h,0.243,small,Reject H0
+Q8b,A/B Test: Welch t-test,3.578,0.00035,0.00035,Cohen's d,0.066,negligible,Reject H0
+Q9,Exact binomial test (p0 = 0.50),16582.0,< 1e-300,< 1e-300,Cohen's h,-0.327,small,Reject H0
+Q9b,Kruskal-Wallis (3 host types),1315.201,2.56e-286,1.79e-285,epsilon-squared,0.027,small,Reject H0
+Q11,Kolmogorov-Smirnov goodness of fit,0.059,8.88e-147,5.33e-146,KS distance D,0.059,small,Reject H0
+Q13,Spearman rank correlation,-0.457,< 1e-300,< 1e-300,rho^2,0.209,medium,Reject H0
+Q14,Kruskal-Wallis (3 cohorts),271.912,9.02e-60,2.71e-59,epsilon-squared,0.006,negligible,Reject H0
+Q15,Spearman rank correlation,-0.055,7.01e-34,1.4e-33,rho^2,0.003,negligible,Reject H0

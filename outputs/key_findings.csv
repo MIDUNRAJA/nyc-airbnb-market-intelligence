@@ -1,0 +1,19 @@
+#,Finding,Evidence,Question
+1,"Prices are log-normal, not normal",Raw skewness 19.1 falls to 0.37 on the log scale; median $106 vs mean $153,"Q1, Q16"
+2,Manhattan dominates the price hierarchy,Medians: Manhattan $150 > Brooklyn $90 > Queens/Staten Island $75 > Bronx $65,Q2
+3,Borough explains ~14% of price variance,"Welch ANOVA F = 1,973, p < 0.001, eta² = 0.136; Kruskal–Wallis agrees",Q2
+4,Room type is the largest single price driver,"Entire home $160 vs private room $70 (129% premium); Welch t = 176, Cohen's d = 1.61","Q3, Q18"
+5,"Room mix and borough are associated, modestly","chi² = 1,558 (dof 8), Cramér's V = 0.126; Manhattan is 61% entire homes",Q4
+6,Neighbourhood matters more than borough,Tribeca leads at $295; Kruskal–Wallis across 123 neighbourhoods eps² = 0.30,Q5
+7,Availability and reviews barely move price,Availability rho = 0.086; reviews vs price rho = -0.055 (negative): significant yet negligible,"Q6, Q14, Q15"
+8,Review count and velocity are strongly linked,Spearman rho = 0.71 among reviewed listings,Q7
+9,Regulation-style long stays are a sizeable niche,"4,491 listings (9.2%) require 30+ nights: 12.4% of entire homes vs 5.6% of private rooms",Q8
+10,Supply is mostly single-property hosts,66.1% of listings are single-host; Gini = 0.22; top 1% of hosts own 10.1%,Q9
+11,Covariance of standardised data equals correlation,Frobenius difference 3.1e-15; PC1 explains 28%,Q10
+12,Log-Normal model is a good but imperfect fit,P(price <= $100): model 43.1% vs empirical 48.9%; KS D = 0.059,Q11
+13,The CLT justifies mean-based inference,Skewness of sample means 1.16 (n=5) -> 0.24 (n=100); SE 12.3 vs theory 12.2,Q12
+14,Price decays steadily with distance from Midtown,Spearman rho = -0.46; median $185 within 2 km,Q13
+15,Linear model explains about half of price variation,"Test R² = 0.54, MAE $53.0 vs $59.5 for the room-type baseline",Q17
+16,"Non-linear models add accuracy, not new drivers","Random Forest R² = 0.63, MAE $47.5; Gradient Boosting R² = 0.63",Q17
+17,Errors are heteroscedastic with heavy tails,Breusch–Pagan LM = 790 (p ~ 0); residual skew 0.84; HC3 robust SE used,Q17
+18,"Room type, location and availability are the levers","Top standardised betas: private room -0.57, shared -0.27, distance -0.24",Q18

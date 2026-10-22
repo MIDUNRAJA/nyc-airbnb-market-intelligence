@@ -1,0 +1,7 @@
+Model,R² (log),RMSE (log),MAE ($),Median AE ($)
+Baseline: predict the global mean,-0.0,0.672,75.23,47.66
+Baseline: predict the room-type mean,0.404,0.518,59.45,30.33
+Multiple Linear Regression (OLS),0.538,0.456,53.01,27.98
+Ridge (alpha = 10),0.538,0.456,53.01,27.98
+Random Forest,0.633,0.407,47.48,23.74
+Gradient Boosting,0.631,0.408,48.19,24.31

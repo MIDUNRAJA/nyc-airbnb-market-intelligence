@@ -1,0 +1,6 @@
+neighbourhood_group,listings,median_price,mean_price,avg_availability,pct_long_stay
+Bronx,1090,65.0,85.831,165.794,0.035
+Brooklyn,20089,90.0,119.435,100.16,0.063
+Manhattan,21654,150.0,182.96,111.93,0.13
+Queens,5664,75.0,96.07,144.422,0.063
+Staten Island,373,75.0,101.799,199.678,0.051

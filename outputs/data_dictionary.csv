@@ -1,0 +1,9 @@
+Field,Definition
+price,Nightly price in USD (raw)
+price_capped,Price winsorised at the 99th percentile
+log_price,"ln(1 + price_capped), modelling target"
+long_stay,minimum_nights >= 30 (NYC Multiple Dwelling Law threshold)
+host_type,Single (1) / Multi (2-5) / Commercial (6+) by host listings count
+availability_cohort,Dormant (0) / Part-time (1-299) / Year-round (300+) days
+review_group,None / Low (1-5) / Medium (6-25) / High (26+) reviews
+dist_center_km,Haversine distance to Times Square in kilometres

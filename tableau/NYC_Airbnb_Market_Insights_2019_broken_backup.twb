@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<workbook source-build='2023.2.0' source-version='2023.2' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-location>
+    <document-properties>
+      <property name='sheet-count'>7</property>
+    </document-properties>
+  </document-location>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='NYC_Airbnb_Tableau_Data' inline='true' name='federated.nyc_airbnb' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='NYC_Airbnb_Tableau_Data' name='textscan.nyc_airbnb'>
+            <connection class='textscan' directory='.' filename='NYC_Airbnb_Tableau_Data.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.nyc_airbnb' name='NYC_Airbnb_Tableau_Data.csv' table='[NYC_Airbnb_Tableau_Data#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='id' ordinal='0' />
+            <column datatype='string' name='name' ordinal='1' />
+            <column datatype='integer' name='host_id' ordinal='2' />
+            <column datatype='string' name='neighbourhood_group' ordinal='3' />
+            <column datatype='string' name='neighbourhood' ordinal='4' />
+            <column datatype='real' name='latitude' ordinal='5' />
+            <column datatype='real' name='longitude' ordinal='6' />
+            <column datatype='string' name='room_type' ordinal='7' />
+            <column datatype='real' name='price' ordinal='8' />
+            <column datatype='real' name='price_capped' ordinal='9' />
+            <column datatype='real' name='log_price' ordinal='10' />
+            <column datatype='integer' name='minimum_nights' ordinal='11' />
+            <column datatype='integer' name='number_of_reviews' ordinal='12' />
+            <column datatype='real' name='reviews_per_month' ordinal='13' />
+            <column datatype='integer' name='calculated_host_listings_count' ordinal='14' />
+            <column datatype='integer' name='availability_365' ordinal='15' />
+            <column datatype='string' name='host_type' ordinal='16' />
+            <column datatype='string' name='price_tier' ordinal='17' />
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Borough' datatype='string' name='[neighbourhood_group]' role='dimension' type='nominal' />
+      <column caption='Neighbourhood' datatype='string' name='[neighbourhood]' role='dimension' type='nominal' />
+      <column caption='Room Type' datatype='string' name='[room_type]' role='dimension' type='nominal' />
+      <column caption='Price ($)' datatype='real' default-format='c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)' name='[price_capped]' role='measure' type='quantitative' />
+      <column caption='Availability (Days)' datatype='integer' name='[availability_365]' role='measure' type='quantitative' />
+      <column caption='Total Reviews' datatype='integer' name='[number_of_reviews]' role='measure' type='quantitative' />
+      <column caption='Minimum Nights' datatype='integer' name='[minimum_nights]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.5' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+        <semantic-value key='[State].[Name]' value='&quot;New York&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='KPI_Summary'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='federated.nyc_airbnb' />
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.nyc_airbnb].[avg:price_capped:qk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{KPI-1111-2222-3333}' />
+    </worksheet>
+    <worksheet name='Borough_Price_Comparison'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='federated.nyc_airbnb' />
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.nyc_airbnb].[none:neighbourhood_group:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.nyc_airbnb].[none:neighbourhood_group:nk]</rows>
+        <cols>[federated.nyc_airbnb].[med:price_capped:qk]</cols>
+      </table>
+      <simple-id uuid='{BORO-1111-2222-3333}' />
+    </worksheet>
+    <worksheet name='Room_Type_Pricing'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='federated.nyc_airbnb' />
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.nyc_airbnb].[none:room_type:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.nyc_airbnb].[none:room_type:nk]</rows>
+        <cols>[federated.nyc_airbnb].[avg:price_capped:qk]</cols>
+      </table>
+      <simple-id uuid='{ROOM-1111-2222-3333}' />
+    </worksheet>
+    <worksheet name='Neighbourhood_Rankings'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='federated.nyc_airbnb' />
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.nyc_airbnb].[none:neighbourhood:nk]</rows>
+        <cols>[federated.nyc_airbnb].[med:price_capped:qk]</cols>
+      </table>
+      <simple-id uuid='{NEIGH-1111-2222-3333}' />
+    </worksheet>
+    <worksheet name='Availability_vs_Price'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='federated.nyc_airbnb' />
+          </datasources>
+          <aggregation value='false' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+          </pane>
+        </panes>
+        <rows>[federated.nyc_airbnb].[none:price_capped:qk]</rows>
+        <cols>[federated.nyc_airbnb].[none:availability_365:qk]</cols>
+      </table>
+      <simple-id uuid='{AVAIL-1111-2222-3333}' />
+    </worksheet>
+    <worksheet name='Room_Type_Distribution_by_Borough'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='federated.nyc_airbnb' />
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.nyc_airbnb].[none:room_type:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.nyc_airbnb].[none:neighbourhood_group:nk]</rows>
+        <cols>[federated.nyc_airbnb].[pcto:cnt:id:qk]</cols>
+      </table>
+      <simple-id uuid='{DIST-1111-2222-3333}' />
+    </worksheet>
+  </worksheets>
+  <windows>
+    <window class='worksheet' maximized='true' name='Borough_Price_Comparison'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+  </windows>
+</workbook>

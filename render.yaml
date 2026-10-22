@@ -1,0 +1,22 @@
+# Render Blueprint — deploys the whole application as ONE Python web service.
+#
+# The Flask API (backend/app.py, mounted by server.py) and the compiled React UI
+# (frontend/dist) are served from the same origin, so the frontend's relative
+# /api/... calls work with no proxy, no CORS layer and no environment variable.
+#
+# Usage: Render Dashboard -> New + -> Blueprint -> select this repository.
+# Everything below is applied automatically.
+services:
+  - type: web
+    name: nyc-airbnb-market-intelligence
+    runtime: python
+    plan: free
+    region: singapore # closest to the project's primary audience
+    buildCommand: pip install -r requirements.txt && cd frontend && npm ci && npm run build
+    # One worker only: the free tier has 512 MB RAM, and the model + pandas/sklearn
+    # resident set makes multiple workers unsafe. Threads keep it responsive.
+    startCommand: gunicorn server:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 120
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.5"
