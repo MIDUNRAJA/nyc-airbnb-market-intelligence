@@ -1400,7 +1400,7 @@ def predict_price(borough, room_type, min_nights, reviews, reviews_per_month, ho
 
 def page_prediction():
     section_heading(
-        "Rubric requirement - regression, prediction & evaluation",
+        "Regression, prediction & evaluation",
         "Predictive Price", "Valuation",
         "Estimates fair market nightly rates using the production Random Forest regressor trained on an "
         "80:20 partition, complete with residual diagnostics and feature importance evaluation.",

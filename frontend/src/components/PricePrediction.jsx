@@ -148,7 +148,7 @@ export default function PricePrediction({ data, apiOnline }) {
   return (
     <div className="space-y-8 pb-12">
       <SectionHeading
-        eyebrow="Rubric Requirement: 7 Marks — Regression, Prediction & Evaluation"
+        eyebrow="Regression, Prediction & Evaluation"
         eyebrowIcon={Sparkles}
         title="Predictive Price Valuation"
         accent="Calculator & Diagnostics"
